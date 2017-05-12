@@ -1,6 +1,10 @@
-package com.training.model.services;
+package com.training.model.tariff;
+
+import com.training.controller.localization.ResourceManager;
+import com.training.view.View;
 
 public class ServicefVatiant {
+
 
 	private String name;
 	private int cost;
@@ -30,7 +34,7 @@ public class ServicefVatiant {
 	}
 	@Override
 	public String toString() {
-		return "name=" + name + ", cost=" + cost + ", amount=" + amount;
+		return String.format(ResourceManager.INSTANCE.getString(View.SERVICEVARIANT_DESCRIPTION), name,cost,amount);
 	}
 	
 }

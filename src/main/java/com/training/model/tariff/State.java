@@ -1,8 +1,8 @@
-package com.training.model.services;
+package com.training.model.tariff;
 
 import com.training.model.Account;
-import com.training.model.services.exceptions.ServiceNotUsedException;
-import com.training.model.services.exceptions.ServiceSuspendedException;
+import com.training.model.tariff.exceptions.ServiceNotUsedException;
+import com.training.model.tariff.exceptions.ServiceSuspendedException;
 
 public interface State {
 

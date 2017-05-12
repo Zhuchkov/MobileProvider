@@ -1,17 +1,18 @@
-package com.training.model.utils;
+package com.training.controller.services.sort;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import com.training.model.services.Tariff;
+import com.training.model.tariff.Tariff;
 
-public class FunctionUtils {
+public class SortUtils {
 
 	public List<Tariff> sortTariffs(List<Tariff> tariffs,Comparator<Tariff> comparator){
-		
+		List <Tariff> sortedTariffs = new ArrayList<>(tariffs);
 		Collections.sort(tariffs,comparator);
-		return tariffs;
+		return sortedTariffs;
 	}
 	
 	public Comparator<Tariff> getByFeeComparator(){

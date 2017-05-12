@@ -1,10 +1,10 @@
-package com.training.model.utils.search;
+package com.training.controller.services.search;
 
 import java.util.Iterator;
 import java.util.List;
 
-import com.training.model.services.ServiceType;
-import com.training.model.services.Tariff;
+import com.training.model.tariff.ServiceType;
+import com.training.model.tariff.Tariff;
 
 public class CostOperator extends Operator {
 

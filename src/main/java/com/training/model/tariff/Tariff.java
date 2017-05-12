@@ -1,10 +1,10 @@
-package com.training.model.services;
+package com.training.model.tariff;
 
 import java.util.Map;
 
 import com.training.model.Account;
-import com.training.model.services.exceptions.ServiceNotUsedException;
-import com.training.model.services.exceptions.ServiceSuspendedException;
+import com.training.model.tariff.exceptions.ServiceNotUsedException;
+import com.training.model.tariff.exceptions.ServiceSuspendedException;
 
 public class Tariff {
 	
@@ -38,6 +38,33 @@ public class Tariff {
 	}
 	public void setServices(Map<ServiceType,Service> services){
 		this.services=services;
+	}
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((services == null) ? 0 : services.hashCode());
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Tariff other = (Tariff) obj;
+		if (services == null) {
+			if (other.services != null)
+				return false;
+		} else if (!services.equals(other.services))
+			return false;
+		return true;
 	}
 
 

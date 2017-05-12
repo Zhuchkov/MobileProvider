@@ -3,23 +3,22 @@ package com.training.model.utils;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.training.model.Account;
 import com.training.model.User;
 
 public class UserUtils {
 	
-	TariffUtils builder = new TariffUtils();
-	
-	public List<User> init(){
+	AccountUtils accoutnUtils = new AccountUtils();
+
+	public List<User> createRandomAccounts(int quantity){
 		List<User> users = new LinkedList<>();
-		for(int i=0; i<20; i++){
+		for(int i=0; i<quantity; i++){
 			User user = new User();
-			Account acc = new Account();
-			acc.setTariff(builder.createRandomTariff());
-			user.setAccount(acc); 
+			user.setAccount(accoutnUtils.createRandomAccount()); 
 			users.add(user);
 		}
 		return users;
 	}
+
+	
 
 }

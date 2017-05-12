@@ -1,9 +1,9 @@
-package com.training.model.utils.search;
+package com.training.controller.services.search;
 
 import java.util.LinkedList;
 import java.util.List;
 
-import com.training.model.services.ServiceType;
+import com.training.model.tariff.ServiceType;
 
 public class QuerryBuilder {
 	List<Operator> operators = new LinkedList<>();
@@ -13,12 +13,12 @@ public class QuerryBuilder {
 	}
 
 	public QuerryBuilder addOperrator(ServiceType type, SearchParameter param, int leftBorder, int rightBorder) {
-		Operator operator = operatorFactory(param, type, leftBorder, rightBorder);
+		Operator operator = operatorFactory( type,param, leftBorder, rightBorder);
 		operators.add(operator);
 		return this;
 	}
 
-	private Operator operatorFactory(SearchParameter param, ServiceType type, int leftBorder, int rightBorder) {
+	private Operator operatorFactory(ServiceType type, SearchParameter param, int leftBorder, int rightBorder) {
 		switch (param) {
 		case AMOUNT:
 			return new AmountOperator(type, leftBorder, rightBorder);
@@ -28,7 +28,8 @@ public class QuerryBuilder {
 		return null;
 	}
 
-	public List<Operator> build() {
-		return operators;
+	public Querry build() {
+		return new Querry(operators);
 	}
+	
 }

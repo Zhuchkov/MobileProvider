@@ -1,7 +1,7 @@
-package com.training.model.services;
+package com.training.model.tariff;
 
 import com.training.model.Account;
-import com.training.model.services.exceptions.ServiceSuspendedException;
+import com.training.model.tariff.exceptions.ServiceSuspendedException;
 
 public class SuspendedState implements State {
 
@@ -10,7 +10,6 @@ public class SuspendedState implements State {
 		if (account.getBalance() > service.getFee()) {
 			account.setBalance(account.getBalance() - service.getFee());
 			service.setState(service.getActiveState());
-			System.out.println(service.getName()+" activated");
 		}
 	}
 

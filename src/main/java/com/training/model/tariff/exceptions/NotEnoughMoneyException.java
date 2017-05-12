@@ -1,4 +1,4 @@
-package com.training.model.services.exceptions;
+package com.training.model.tariff.exceptions;
 
 public class NotEnoughMoneyException extends Exception {
 

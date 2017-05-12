@@ -1,9 +1,9 @@
 package com.training.model;
 
-import com.training.model.services.ServiceType;
-import com.training.model.services.Tariff;
-import com.training.model.services.exceptions.ServiceNotUsedException;
-import com.training.model.services.exceptions.ServiceSuspendedException;
+import com.training.model.tariff.ServiceType;
+import com.training.model.tariff.Tariff;
+import com.training.model.tariff.exceptions.ServiceNotUsedException;
+import com.training.model.tariff.exceptions.ServiceSuspendedException;
 
 public class Account {
 
@@ -25,7 +25,7 @@ public class Account {
 		tariff.notifyServices(this,false);
 	}
 	
-	private void monthlyPay(){
+	public void monthlyPay(){
 		tariff.notifyServices(this,true);
 	}
 	
@@ -43,6 +43,14 @@ public class Account {
 
 	public void setTariff(Tariff tariff) {
 		this.tariff = tariff;
+	}
+
+	public String getNumber() {
+		return number;
+	}
+
+	public void setNumber(String number) {
+		this.number = number;
 	}
 	
 }
